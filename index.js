@@ -10,13 +10,29 @@ $(function () {
     var l6 = $(".l6>span>input")
     var l7 = $(".l7>span>input")
     var l8 = $(".l8>span>input")
-
     var checkArr = []; // 完整的数组
     var score = 0;
     var record = Number(localStorage.getItem('record'));
-    if(record){
-        $('#record').text(n2time(record))
-    }
+    var cells = document.querySelectorAll("td");
+   
+    cells.forEach(function(cell) {
+        cell.addEventListener("click", function() {
+          if (cell.classList.contains("selected")) {
+            deselectCell(cell);
+          } else {
+            selectCell(cell);
+          }
+        });
+      });
+
+    function selectCell(cell) {
+        cell.classList.add("selected");
+      }
+  
+    function deselectCell(cell) {
+        cell.classList.remove("selected");
+      }
+
     function generateAll() {
         var res = [[], [], [], [], [], [], [], [], []]
 
@@ -49,8 +65,7 @@ $(function () {
         }
         return res;
     }
-
-
+   
     function disorder() {
         let res
         let r1 = [0, 1, 2]

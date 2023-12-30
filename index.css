@@ -1,4 +1,17 @@
+.row .selected {
+    background-color: #7091d5;
+  }
 
+  .col .selected {
+    background-color: #7091d5;
+  }
+
+  .grid .selected {
+    background-color: #7091d5;
+  }
+body {
+    background-color: #c52727;
+  }
 #box{
     text-align: center;
     margin: 40px 20px;
